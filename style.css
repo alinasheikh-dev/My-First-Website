@@ -1,0 +1,297 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Global Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    background-color: #f7f7f7; /* A light background for the whole page */
+    line-height: 1.6;
+    color: #333;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #c0392b; /* Reddish background */
+    position: fixed; /* Fixed header */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    width: auto; /* Adjust width to content */
+    float: left;
+    text-align: left;
+    line-height: 100px;
+    padding-left: 15px; /* Add some padding */
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #f0f0f0;
+}
+
+nav {
+    float: right;
+    line-height: 100px;
+    padding-right: 15px; /* Add some padding */
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Georgia', serif; /* Changed to common font */
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: white;
+    padding: 36px 15px;
+    margin: 0 2px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background: #fff;
+    color: #130f40;
+    font-weight: 500;
+}
+
+/* Banner Area Styles */
+.banner-area {
+    position: relative; /* Crucial for absolute positioning of children */
+    padding-top: 100px; /* Space for fixed header */
+    height: 60vh; /* Responsive height */
+    min-height: 400px; /* Minimum height for larger screens */
+    display: flex; /* Use flex to center the text overlay */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide overflowing image parts */
+}
+
+.banner-image {
+    position: absolute; /* Position relative to .banner-area */
+    top: 0;
+    left: 0;
+    width: 100%; /* Fill parent width */
+    height: 100%; /* Fill parent height */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    z-index: 1; /* Place image below text overlay */
+}
+
+.banner-text-overlay {
+    position: relative; /* Keep text above image */
+    z-index: 2; /* Ensure text is on top */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Removed background-color and padding to remove the shadow box */
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    /* padding: 20px 40px; */
+    border-radius: 10px; /* Keep border-radius if desired */
+}
+
+.banner-text-overlay h2 {
+    font-size: 3.5rem; /* Responsive font size */
+    color: white;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Content Area Styles */
+.content-area {
+    width: auto;
+    background: #fff; /* White background for content */
+    padding: 5% 5%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+    position: relative;
+    text-align: left; /* Align text left within content area */
+}
+
+.content-area h2 {
+    font-size: 2.5rem; /* Responsive font size */
+    margin-bottom: 20px;
+    padding-top: 0;
+    letter-spacing: 2px;
+    color: #c0392b;
+    text-align: center; /* Center heading */
+}
+
+.content-area p {
+    padding: 1% 0;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 800px; /* Limit paragraph width for readability */
+    margin: 0 auto; /* Center paragraph */
+    font-size: 1rem;
+}
+
+/* Biryani Cards Section */
+h1 {
+    margin: 40px 0 20px;
+    font-size: 2.8rem;
+    color: #c0392b;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items horizontally */
+    gap: 25px; /* Space between cards */
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.biryani-card-container {
+    padding: 10px;
+    flex: 1 1 280px; /* Flex-grow, flex-shrink, basis for responsiveness */
+    max-width: 320px; /* Max width for individual card container */
+}
+
+.biryani-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.biryani-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.biryani-card img {
+    width: 100%;
+    height: 180px; /* Fixed height for images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-bottom: 1px solid #eee;
+}
+
+.biryani-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the button to the bottom */
+    text-align: center;
+}
+
+.biryani-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.biryani-card-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.order-button {
+    display: block;
+    width: 100%;
+    background-color: #e67e22; /* Orange color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.order-button:hover {
+    background-color: #d35400; /* Darker orange on hover */
+    transform: translateY(-2px);
+}
+
+.order-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-text-overlay h2 {
+        font-size: 2.5rem;
+    }
+    nav a {
+        font-size: 16px;
+        padding: 36px 8px;
+    }
+    .content-area h2 {
+        font-size: 2rem;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 24px;
+    }
+    nav {
+        float: none;
+        text-align: center;
+        line-height: 60px; /* Adjust for smaller header */
+    }
+    nav a {
+        display: block;
+        padding: 10px 0;
+    }
+    header {
+        height: auto;
+        padding-bottom: 10px;
+    }
+    .banner-area {
+        padding-top: 120px; /* Adjust for potentially taller header */
+        height: 50vh;
+    }
+    .banner-text-overlay h2 {
+        font-size: 2rem;
+    }
+    .flexbox {
+        flex-direction: column; /* Stack cards vertically on very small screens */
+        align-items: center;
+    }
+    .biryani-card-container {
+        width: 90%; /* Make cards take more width on small screens */
+        max-width: 350px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
